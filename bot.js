@@ -28,7 +28,7 @@ client.once('ready', () => {
     console.log('H-Huh what happened? I was asleep.');
     client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
     client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
-    client.user.setAvatar('./images/karen-haircut.jpg');
+    //client.user.setAvatar('./images/karen-haircut.jpg');
     //client.user.setGame('Fallout 4');
 });
 client.once('reconnecting', () => {
@@ -222,6 +222,7 @@ client.on('message', msg => {
     if(isCommand(message, 'normal')) {
         if(msg.author.id !== '391878815263096833') return;
         client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
+        client.user.setAvatar('./images/karen-haircut.jpg');
     }
 });
 
