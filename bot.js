@@ -13,7 +13,6 @@ const username = [
     '⛅𝔎𝔞𝔯𝔢𝔫',
     'Krazy K',
     '[🌼KAREN🌼]',
-    'Kara'
 ]
 
 const activitozo = [
@@ -23,10 +22,14 @@ const activitozo = [
     'YouTube'
 ]
 
+
+
 client.once('ready', () => {
     console.log('H-Huh what happened? I was asleep.');
     client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
     client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
+    //client.user.setAvatar('./images/karen-haircut.jpg');
+    //client.user.setGame('Fallout 4');
 });
 client.once('reconnecting', () => {
     console.log('Reconnecting!');
@@ -148,7 +151,8 @@ client.on('message', msg => {
        message.toLowerCase().includes('cyka') ||
        message.toLowerCase().includes('сука') ||
        message.toLowerCase().includes('faggot') ||
-       message.toLowerCase().includes('pu$$y')) {
+       message.toLowerCase().includes('pu$$y') ||
+       message.toLowerCase().includes('stfu')) {
         msg.delete();
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
         msg.reply(giffo[Math.floor(Math.random() * giffo.length)])
@@ -204,12 +208,23 @@ client.on('message', msg => {
         if(msg.author.id !== '391878815263096833') return;
         var member= message.mentions.members.first();
         member.kick().then((member) => {
-            message.channel.send("**Ugh finally that slut " + member.displayName + " has been kicked!**");
+            msg.channel.send("**Ugh finally that slut " + member.displayName + " has been kicked!**");
         }).catch(() => {
-            message.channel.send("Hmph they are my friends so they can stay!");
+            msg.channel.send("Hmph they are my friends so they can stay!");
         });
     }
-
+    if(isCommand(message, 'funtimes')) {
+        if(msg.author.id !== '391878815263096833') return;
+        client.user.setUsername('Kara');
+        client.user.setAvatar('./images/immouseduh.jpg');
+        client.user.setGame('PC Building Simulator');
+    }
+    if(isCommand(message, 'normal')) {
+        if(msg.author.id !== '391878815263096833') return;
+        client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
+        client.user.setAvatar('./images/karen-haircut.jpg');
+        client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
+    }
 });
 
 client.login(config.token);
