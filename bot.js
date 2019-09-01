@@ -223,6 +223,7 @@ client.on('message', msg => {
         if(msg.author.id !== '391878815263096833') return;
         client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
         client.user.setAvatar('./images/karen-haircut.jpg');
+        client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
     }
 });
 
