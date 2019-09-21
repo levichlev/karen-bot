@@ -45,13 +45,6 @@ const isCommand = function (message, cmd) {
     }
 } 
 
-const activity = [
-    'Porn',
-    'The Manager',
-    'Facebook',
-    'YouTube'
-]
-
 const giffo = [
     {files: ['./images/bangbangdead.gif']},
     {files: ['./images/girldead.gif']},
@@ -147,12 +140,12 @@ client.on('message', msg => {
        message.toLowerCase().includes('pussy') ||
        message.toLowerCase().includes('dick') ||
        message.toLowerCase().includes('cunt') ||
-       message.toLowerCase().includes('ass') ||
        message.toLowerCase().includes('cyka') ||
        message.toLowerCase().includes('сука') ||
        message.toLowerCase().includes('faggot') ||
        message.toLowerCase().includes('pu$$y') ||
        message.toLowerCase().includes('stfu')) {
+        if(msg.author.bot) return;
         msg.delete();
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
         msg.reply(giffo[Math.floor(Math.random() * giffo.length)])
@@ -204,27 +197,32 @@ client.on('message', msg => {
     if(isCommand(message, 'cursed')) {
         msg.channel.send('It totally isn\'t cursed!', {files: ['./images/ohgod.png']})
     }
+    // Members suddenly isn't defined for the kick command
     if(isCommand(message, "kick")) {
         if(msg.author.id !== '391878815263096833') return;
-        var member= message.mentions.members.first();
+        var member= msg.mentions.members.first();
         member.kick().then((member) => {
             msg.channel.send("**Ugh finally that slut " + member.displayName + " has been kicked!**");
         }).catch(() => {
             msg.channel.send("Hmph they are my friends so they can stay!");
         });
     }
-    if(isCommand(message, 'funtimes')) {
+    if(isCommand(msg, 'funtimes')) {
         if(msg.author.id !== '391878815263096833') return;
         client.user.setUsername('Kara');
         client.user.setAvatar('./images/immouseduh.jpg');
         client.user.setGame('PC Building Simulator');
     }
-    if(isCommand(message, 'normal')) {
+    if(isCommand(msg, 'normal')) {
         if(msg.author.id !== '391878815263096833') return;
         client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
         client.user.setAvatar('./images/karen-haircut.jpg');
         client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
     }
+//    if( message.toLowerCase().includes('karen is a pussy')) {
+//        msg.channel.send("Hmph that sack of wasted human tissue has been rightfully banned! Fuckers like them cant exist in my safe space!");
+//        msg.author.kick();
+//    }
 });
 
 client.login(config.token);
