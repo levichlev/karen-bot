@@ -99,7 +99,7 @@ client.on('message', msg => {
 
     var message = msg.content.toLowerCase();
     if (message === 'man!ping') {
-        message.reply('Where is your manager? This behaviour is unacceptable!');
+        msg.reply('Where is your manager? This behaviour is unacceptable!');
     }
     else if (message === 'man!invite') {
         msg.reply('Hmph fine but you must give me a free meal at McDonalds because of this! https://discordapp.com/oauth2/authorize?&client_id=599289687743397889&scope=bot&permissions=8');
@@ -146,6 +146,20 @@ client.on('message', msg => {
        message.toLowerCase().includes('pu$$y') ||
        message.toLowerCase().includes('stfu')) {
         if(msg.author.bot) return;
+    if(msg.toLowerCase().includes('fuck') ||
+       msg.toLowerCase().includes('bitch') ||
+       msg.toLowerCase().includes('nigga') ||
+       msg.toLowerCase().includes('nigger') ||
+       msg.toLowerCase().includes('shit') ||
+       msg.toLowerCase().includes('pussy') ||
+       msg.toLowerCase().includes('dick') ||
+       msg.toLowerCase().includes('cunt') ||
+       msg.toLowerCase().includes('ass') ||
+       msg.toLowerCase().includes('cyka') ||
+       msg.toLowerCase().includes('сука') ||
+       msg.toLowerCase().includes('faggot') ||
+       msg.toLowerCase().includes('pu$$y')) {
+           if(msg.author.bot) return;
         msg.delete();
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
         msg.reply(giffo[Math.floor(Math.random() * giffo.length)])
