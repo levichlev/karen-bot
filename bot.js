@@ -140,25 +140,11 @@ client.on('message', msg => {
        message.toLowerCase().includes('pussy') ||
        message.toLowerCase().includes('dick') ||
        message.toLowerCase().includes('cunt') ||
+       message.toLowerCase().includes('ass') ||
        message.toLowerCase().includes('cyka') ||
        message.toLowerCase().includes('сука') ||
        message.toLowerCase().includes('faggot') ||
-       message.toLowerCase().includes('pu$$y') ||
-       message.toLowerCase().includes('stfu')) {
-        if(msg.author.bot) return;
-    if(msg.toLowerCase().includes('fuck') ||
-       msg.toLowerCase().includes('bitch') ||
-       msg.toLowerCase().includes('nigga') ||
-       msg.toLowerCase().includes('nigger') ||
-       msg.toLowerCase().includes('shit') ||
-       msg.toLowerCase().includes('pussy') ||
-       msg.toLowerCase().includes('dick') ||
-       msg.toLowerCase().includes('cunt') ||
-       msg.toLowerCase().includes('ass') ||
-       msg.toLowerCase().includes('cyka') ||
-       msg.toLowerCase().includes('сука') ||
-       msg.toLowerCase().includes('faggot') ||
-       msg.toLowerCase().includes('pu$$y')) {
+       message.toLowerCase().includes('pu$$y')) {
            if(msg.author.bot) return;
         msg.delete();
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
@@ -232,6 +218,17 @@ client.on('message', msg => {
         client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
         client.user.setAvatar('./images/karen-haircut.jpg');
         client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
+    }
+    if(isCommand(msg, 'stream')) {
+        if(msg.author.id !=='391878815263096833') return;
+        client.user.setStatus('available')
+        client.user.setPresence({
+            game: {
+                name: 'with friends',
+                type: "STREAMING",
+                url: "https://www.twitch.tv/exerra"
+            }
+        });
     }
 //    if( message.toLowerCase().includes('karen is a pussy')) {
 //        msg.channel.send("Hmph that sack of wasted human tissue has been rightfully banned! Fuckers like them cant exist in my safe space!");
