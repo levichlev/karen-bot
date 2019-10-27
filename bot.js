@@ -4,7 +4,7 @@ const client = new Discord.Client();
 const configData = fs.readFileSync(__dirname + '/config.json', 'utf8');
 const config = JSON.parse(configData);
 const Welcome = require("discord-welcome");
-
+const file = new Discord.Attachment('images/cemetery.png');
 const username = [
     'Karen',
     'Karen Schez',
@@ -23,9 +23,12 @@ const activitozo = [
     'YouTube'
 ]
 
+
 client.once('ready', () => {
-    console.log('H-Huh what happened? I was asleep.');
-    client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
+    //console.log('H-Huh what happened? I was asleep.');
+    console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
+    //client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
+    client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
     client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
 });
 client.once('reconnecting', () => {
@@ -35,12 +38,25 @@ client.once('disconnect', () => {
     console.log('Disconnect!');
     });
 
+client.on("guildDelete", guild => {
+  // this event triggers when the bot is removed from a guild.
+  console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
+  client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
+});
+
+client.on("guildCreate", guild => {
+    // This event triggers when the bot joins a guild.
+    console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
+  });
+  client.on('error', console.error);
 const isCommand = function (message, cmd) {
     if(message.toString().substr(0, config.prefix.length) == config.prefix) {
         if(message.toString().toLowerCase().includes(cmd)) return true;
         else return false;
     }
 } 
+
 
 const activity = [
     'Porn',
@@ -98,12 +114,11 @@ const ranch = [
     'Good job Dr.Phil!',
     'Good riddance!'
 ]
-
-client.on('message', msg => {
+client.on('message', async msg => {
 
     var message = msg.content.toLowerCase();
     if (message === 'man!ping') {
-        message.reply('Where is your manager? This behaviour is unacceptable!');
+        msg.reply('Where is your manager? This behaviour is unacceptable!');
     }
     else if (message === 'man!invite') {
         msg.reply('Hmph fine but you must give me a free meal at McDonalds because of this! https://discordapp.com/oauth2/authorize?&client_id=599289687743397889&scope=bot&permissions=8');
@@ -119,7 +134,7 @@ client.on('message', msg => {
         .setTitle('Karen bot')
         .setImage(client.user.avatarURL)
         .setColor([255, 0, 0])
-        .setDescription('I am a Discord bot made by Occult Waifu#1659. Commands: ```man!help - Help command.\nman!ping - Try it yourself\nman!invite - Lets me in your server. \nman!creator - Who is my creator. \nman!shutdown - Only for the owner.``` `man!` is the prefix. \nMy server: https://discord.gg/9PxEPpT \nMy creator\'s server which hosts all his creations: https://discord.gg/JSh7Bhs');
+        .setDescription('I am a Discord bot made by Occult Waifu#1659. Commands: ```man!help - Help command.\nman!ping - Try it yourself\nman!invite - Lets me in your server. \nman!creator - Who is my creator. \nman!cemetery - Information about AViVA\'s song Cemetery.\nman!shutdown - Only for the owner.``` `man!` is the prefix. \nMy server: https://discord.gg/9PxEPpT \nMy creator\'s server which hosts all his creations: https://discord.gg/JSh7Bhs');
         msg.channel.send(embed);
     }
     // Avatar work in progress
@@ -147,8 +162,16 @@ client.on('message', msg => {
        message.toLowerCase().includes('ass') ||
        message.toLowerCase().includes('cyka') ||
        message.toLowerCase().includes('сука') ||
-       message.toLowerCase().includes('faggot') ||
+       message.toLowerCase().includes('f u c k') ||
+       message.toLowerCase().includes('f uck') ||
+       message.toLowerCase().includes('fuk') ||
+       message.toLowerCase().includes('fuc k') ||
+       message.toLowerCase().includes('fu ck') ||
+       message.toLowerCase().includes('f u ck') ||
+       message.toLowerCase().includes('fu c k') ||
        message.toLowerCase().includes('pu$$y')) {
+        if(msg.author.id == '391878815263096833') return;
+        if(msg.author.id == '472959771964866562') return;
         msg.delete();
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
         msg.reply(giffo[Math.floor(Math.random() * giffo.length)])
@@ -200,16 +223,87 @@ client.on('message', msg => {
     if(isCommand(message, 'cursed')) {
         msg.channel.send('It totally isn\'t cursed!', {files: ['./images/ohgod.png']})
     }
-    if(isCommand(message, "kick")) {
-        if(msg.author.id !== '391878815263096833') return;
-        var member= message.mentions.members.first();
-        member.kick().then((member) => {
-            message.channel.send("**Ugh finally that slut " + member.displayName + " has been kicked!**");
-        }).catch(() => {
-            message.channel.send("Hmph they are my friends so they can stay!");
-        });
+    /*
+    if(isCommand(message, 'kick')) {
+        // This command must be limited to mods and admins. In this example we just hardcode the role names.
+        // Please read on Array.some() to understand this bit: 
+        // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Array/some?
+        //if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+        if(msg.author.id !== '391878815263096833')
+          return message.reply("Sorry, you don't have permissions to use this!");
+        
+        // Let's first check if we have a member and if we can kick them!
+        // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
+        // We can also support getting the member by ID, which would be args[0]
+        let member = message.mentions.members.first() || message.guild.members.get(args[0]);
+        if(!member)
+          return message.reply("Please mention a valid member of this server");
+        if(!member.kickable) 
+          return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+        
+        // slice(1) removes the first part, which here should be the user mention or ID
+        // join(' ') takes all the various parts to make it a single string.
+        let reason = args.slice(1).join(' ');
+        if(!reason) reason = "No reason provided";
+        
+        // Now, time for a swift kick in the nuts!
+        await member.kick(reason)
+          .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
+        message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
+    
+      }*/
+    if(isCommand(message, "cemetery")) {
+        let embed = new Discord.RichEmbed()
+        .setTitle('AViVA - Cemetery')
+        .setColor([255, 0, 0])
+        .setDescription('"Cemetery", a song made by AViVA.')
+        .addBlankField()
+        .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
+        .addBlankField()
+        .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
+        .addBlankField()
+        .addField('Soundcloud', "https://soundcloud.com/roachiey/aviva-cemetery")
+        .addBlankField()
+        .addField('Deezer', 'https://www.deezer.com/en/album/113911632')
+        .addBlankField()
+        .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
+        .setImage('https://i.imgur.com/Nb20O4V.png')
+        .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/QmGIfg5.jpg')
+        msg.channel.send(embed); 
     }
-
+    if(isCommand(message, "guildsize")) {
+        if(msg.author.id !== '391878815263096833') return;
+        msg.reply(`I am in ${client.guilds.size} servers.`);
+    }
+/*
+    if(isCommand(message, 'say')) {
+        const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();  
+        // makes the bot say something and delete the message. As an example, it's open to anyone to use. 
+        // To get the "message" itself we join the `args` back into a string with spaces: 
+        const sayMessage = args.join(" ");
+        // Then we delete the command message (sneaky, right?). The catch just ignores the error with a cute smiley thing.
+        message.delete().catch(O_o=>{}); 
+        // And we get the bot to say the thing: 
+        message.channel.send(sayMessage);
+      }
+      */
+/*       if(isCommand(message, 'purge')) {
+        // This command removes all messages from all users in the channel, up to 100.
+        
+        // get the delete count, as an actual number.
+        const deleteCount = parseInt(args[0], 10);
+        
+        // Ooooh nice, combined conditions. <3
+        if(!deleteCount || deleteCount < 2 || deleteCount > 100)
+          return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
+        
+        // So we get our messages, and delete them. Simple enough, right?
+        const fetched = await message.channel.fetchMessages({limit: deleteCount});
+        message.channel.bulkDelete(fetched)
+          .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
+      } */
 });
+
 
 client.login(config.token);
