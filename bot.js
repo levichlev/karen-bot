@@ -134,7 +134,7 @@ client.on('message', async msg => {
         .setTitle('Karen bot')
         .setImage(client.user.avatarURL)
         .setColor([255, 0, 0])
-        .setDescription('I am a Discord bot made by Occult Waifu#1659. Commands: ```man!help - Help command.\nman!ping - Try it yourself\nman!invite - Lets me in your server. \nman!creator - Who is my creator. \nman!cemetery - Information about AViVA\'s song Cemetery.\nman!shutdown - Only for the owner.``` `man!` is the prefix. \nMy server: https://discord.gg/9PxEPpT \nMy creator\'s server which hosts all his creations: https://discord.gg/JSh7Bhs');
+        .setDescription('I am a Discord bot made by Occult Waifu#1659. Commands: ```man!help - Help command.\nman!ping - Try it yourself\nman!invite - Lets me in your server.\nman!creator - Who is my creator.\nman!aviva - Information about the musician AViVA.\nman!cemetery - Information about AViVA\'s song Cemetery.\nman!shutdown - Only for the owner.``` `man!` is the prefix. \nMy server: https://discord.gg/9PxEPpT \nMy creator\'s server which hosts all his creations: https://discord.gg/JSh7Bhs');
         msg.channel.send(embed);
     }
     // Avatar work in progress
@@ -257,24 +257,37 @@ client.on('message', async msg => {
         .setTitle('AViVA - Cemetery')
         .setColor([255, 0, 0])
         .setDescription('"Cemetery", a song made by AViVA.')
-        .addBlankField()
         .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
-        .addBlankField()
         .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
-        .addBlankField()
         .addField('Soundcloud', "https://soundcloud.com/roachiey/aviva-cemetery")
-        .addBlankField()
         .addField('Deezer', 'https://www.deezer.com/en/album/113911632')
-        .addBlankField()
         .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
         .setImage('https://i.imgur.com/Nb20O4V.png')
         .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/QmGIfg5.jpg')
         msg.channel.send(embed); 
     }
+    if(isCommand(message, 'aviva')) {
+        let embed = new Discord.RichEmbed()
+        .setTitle('Musician AViVA')
+        .setThumbnail('https://i.imgur.com/wMWTjBh.png')
+        .setColor([255, 0, 0])
+        .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ACYBGNQ9yFLFLSxYhJ1il92GBwtdqyC2Tg%3A1572177651603&ei=84a1Xam3JIqxrgTg8a2QDA&q=aviva+%28musician%29&oq=aviva+%28m&gs_l=psy-ab.3.0.35i39j0i22i30l9.5094.5803..6979...0.2..0.142.378.0j3......0....1..gws-wiz.......0i71j0j0i10j0i203.Q82xyHqSnoc')
+        .setDescription('Aviva Anastasia Payne')
+        .addField('Date of birth', 'May 6, 1994')
+        .addField('Place of birth', 'Sydney, New South Wales, Australia.')
+        .addField('Current living place', 'Los Angeles, California')
+        .addField('Latest release', 'Cemetery')
+        .addField('Top track in Spotify', 'As of 27/10/2019 the most popular track is GRRRLS')
+        .addField('Genre', 'Emo pop')
+        //.setImage('https://i.imgur.com/wMWTjBh.png')
+        .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/QmGIfg5.jpg')
+        msg.channel.send(embed);
+    }
     if(isCommand(message, "guildsize")) {
         if(msg.author.id !== '391878815263096833') return;
         msg.reply(`I am in ${client.guilds.size} servers.`);
     }
+    
 /*
     if(isCommand(message, 'say')) {
         const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
