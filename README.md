@@ -6,3 +6,6 @@ Invite link - https://discordapp.com/oauth2/authorize?&client_id=599289687743397
 Karen Bot's support server - https://discord.gg/9PxEPpT
 
 My personal server with all my bots - https://discord.gg/JSh7Bhs
+
+# Latest commit
+Added a command for AViVA, also some cemetery fixes.
