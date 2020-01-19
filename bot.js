@@ -5,6 +5,8 @@ const configData = fs.readFileSync(__dirname + '/config.json', 'utf8');
 const config = JSON.parse(configData);
 const Welcome = require("discord-welcome");
 const file = new Discord.Attachment('images/cemetery.png');
+let commands = {};
+
 const username = [
     'Karen',
     'Karen Schez',
@@ -30,6 +32,11 @@ client.once('ready', () => {
     //client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
     client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
     client.user.setUsername(username[Math.floor(Math.random() * username.length)]);
+    fs.readdir("./heilgoodfpsinr6s", function(err, files) {
+        files.forEach(function(name) {
+            commands[name.split(".")[0]] = require("./heilgoodfpsinr6s/" + name);
+        });
+    });
 });
 client.once('reconnecting', () => {
     console.log('Reconnecting!');
@@ -115,42 +122,19 @@ const ranch = [
     'Good riddance!'
 ]
 client.on('message', async msg => {
+/*     let totalSeconds = (client.uptime / 1000);
+let days = Math.floor(totalSeconds / 86400);
+let hours = Math.floor(totalSeconds / 3600);
+totalSeconds %= 3600;
+let minutes = Math.floor(totalSeconds / 60);
+let seconds = totalSeconds % 60; */
+const args = msg.content.substr(config.prefix.length).split(" ");
+if(msg.content.startsWith(config.prefix)) {
 
+    if(commands[args[0]] == undefined) return;
+    commands[args[0]].run(msg, args);
+}
     var message = msg.content.toLowerCase();
-    if (message === 'man!ping') {
-        msg.reply('Where is your manager? This behaviour is unacceptable!');
-    }
-    else if (message === 'man!invite') {
-        msg.reply('Hmph fine but you must give me a free meal at McDonalds because of this! https://discordapp.com/oauth2/authorize?&client_id=599289687743397889&scope=bot&permissions=8');
-    }
-    else if(message === 'Manager') {
-        msg.channel.send('Wait who? I must speak to them immidiately!');
-    }
-    else if(isCommand(message, 'man!creator')) {
-        msg.reply('My dad is Occult Waifu#1659');
-    }
-    else if(isCommand(message, 'help')) {
-        var embed = new Discord.RichEmbed()
-        .setTitle('Karen bot')
-        .setImage(client.user.avatarURL)
-        .setColor([255, 0, 0])
-        .setDescription('I am a Discord bot made by Occult Waifu#1659. Commands: ```man!help - Help command.\nman!ping - Try it yourself\nman!invite - Lets me in your server.\nman!creator - Who is my creator.\nman!aviva - Information about the musician AViVA.\nman!cemetery - Information about AViVA\'s song Cemetery.\nman!shutdown - Only for the owner.``` `man!` is the prefix. \nMy server: https://discord.gg/9PxEPpT \nMy creator\'s server which hosts all his creations: https://discord.gg/JSh7Bhs');
-        msg.channel.send(embed);
-    }
-    // Avatar work in progress
-    else if(isCommand(msg, 'information')) {
-        let member = msg.mentions.users.first();
-        if(member == undefined) msg.reply('Please tell me who to spy on.');
-        else {
-            if(msg.author.id !== '391878815263096833') return;
-            let embed = new Discord.RichEmbed()
-            .setTitle(member.username + '\'s Discord profile')
-            .setDescription('Discord name: ' + member.tag + '\nJoin date: ' + member.createdAt + '\nLast sent message ID: ' + member.lastMessageID)
-            .setColor([255, 0, 0])
-            .setImage(member.avatarURL);
-            msg.channel.send(embed);   
-        }
-    }
     if(message.toLowerCase().includes('fuck') ||
        message.toLowerCase().includes('bitch') ||
        message.toLowerCase().includes('nigga') ||
@@ -176,15 +160,6 @@ client.on('message', async msg => {
         //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
         msg.reply(giffo[Math.floor(Math.random() * giffo.length)])
     }
-    if(message === 'it works!') {
-        msg.reply('Of course it works! Hmph some people.');
-    }
-    if(message.includes('man!shutdown')) {
-        if (msg.author.id !== '391878815263096833') return;
-        msg.reply(shutdown[Math.floor(Math.random() * shutdown.length)]).then(() => {
-        process.exit(1);
-      })
-    };
     if(message === '> >run ping') {
         msg.channel.send(`**Running Ping.exe...**`).then((msg)=> {
             setTimeout(function(){
@@ -204,25 +179,14 @@ client.on('message', async msg => {
             }, 2000)
           }); 
     }
-    if(message === 'status report') {
-        if (msg.author.id !== '391878815263096833') return;
-        msg.reply(status[Math.floor(Math.random() * status.length)]);
-    }
-    if(message.includes('a theory or system')) {
-        if(msg.author.id !== '615963160108597268') return;
-        msg.reply(sarcasm[Math.floor(Math.random() * sarcasm.length)]);
-    }
-    if(message.toLowerCase().includes('im the manager')) {
-        if(msg.author.id !== '241607157685026817') return;
-        msg.reply('Well where is YOUR manager, Varoll?')
-    }
-    if(message.toLowerCase().includes('to the ranch')) {
-        if(msg.author.id !== '391878815263096833') return;
-        msg.channel.send(ranch[Math.floor(Math.random() * ranch.length)])
-    }
-    if(isCommand(message, 'cursed')) {
-        msg.channel.send('It totally isn\'t cursed!', {files: ['./images/ohgod.png']})
-    }
+    client.on('guildMemberAdd', member => {
+        // Send the message to a designated channel on a server:
+        const channel = member.guild.channels.find(ch => ch.name === 'new-friends');
+        // Do nothing if the channel wasn't found on this server
+        if (!channel) return;
+        // Send the message, mentioning the member
+        channel.send(`Welcome to this server, ${member}. Please read #rules.`);
+  });
     /*
     if(isCommand(message, 'kick')) {
         // This command must be limited to mods and admins. In this example we just hardcode the role names.
@@ -252,41 +216,21 @@ client.on('message', async msg => {
         message.reply(`${member.user.tag} has been kicked by ${message.author.tag} because: ${reason}`);
     
       }*/
-    if(isCommand(message, "cemetery")) {
+    /* if(isCommand(message, "guildsize")) {
         let embed = new Discord.RichEmbed()
-        .setTitle('AViVA - Cemetery')
+        let guild = `${client.guild.size}`
+        let channels = `${client.channels.size}`
+        let users = `${client.users.size}`
+        .setTitle('Bot information')
+        .setDescription('The info about this bot! Work in progress.')
         .setColor([255, 0, 0])
-        .setDescription('"Cemetery", a song made by AViVA.')
-        .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
-        .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
-        .addField('Soundcloud', "https://soundcloud.com/roachiey/aviva-cemetery")
-        .addField('Deezer', 'https://www.deezer.com/en/album/113911632')
-        .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
-        .setImage('https://i.imgur.com/Nb20O4V.png')
-        .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/QmGIfg5.jpg')
-        msg.channel.send(embed); 
-    }
-    if(isCommand(message, 'aviva')) {
-        let embed = new Discord.RichEmbed()
-        .setTitle('Musician AViVA')
-        .setThumbnail('https://i.imgur.com/wMWTjBh.png')
-        .setColor([255, 0, 0])
-        .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ACYBGNQ9yFLFLSxYhJ1il92GBwtdqyC2Tg%3A1572177651603&ei=84a1Xam3JIqxrgTg8a2QDA&q=aviva+%28musician%29&oq=aviva+%28m&gs_l=psy-ab.3.0.35i39j0i22i30l9.5094.5803..6979...0.2..0.142.378.0j3......0....1..gws-wiz.......0i71j0j0i10j0i203.Q82xyHqSnoc')
-        .setDescription('Aviva Anastasia Payne')
-        .addField('Date of birth', 'May 6, 1994')
-        .addField('Place of birth', 'Sydney, New South Wales, Australia.')
-        .addField('Current living place', 'Los Angeles, California')
-        .addField('Latest release', 'Cemetery')
-        .addField('Top track in Spotify', 'As of 27/10/2019 the most popular track is GRRRLS')
-        .addField('Genre', 'Emo pop')
-        //.setImage('https://i.imgur.com/wMWTjBh.png')
-        .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/QmGIfg5.jpg')
+        .addField(`Servers`, guild)
+        .addField(`Channels`, channels)
+        .addField(`Users`, users)
+        //.addField(`Uptime`, `${days} days, ${hours} hours, ${minutes} minutes and ${seconds} seconds`)
         msg.channel.send(embed);
-    }
-    if(isCommand(message, "guildsize")) {
-        if(msg.author.id !== '391878815263096833') return;
-        msg.reply(`I am in ${client.guilds.size} servers.`);
-    }
+    } */
+    // Create an event listener for new guild members
     
 /*
     if(isCommand(message, 'say')) {
@@ -320,3 +264,8 @@ client.on('message', async msg => {
 
 
 client.login(config.token);
+exports.client = client;
+exports.config = config;
+exports.commands = commands;
+exports.Discord = Discord;
+exports.dir = __dirname;
