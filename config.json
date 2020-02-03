@@ -1,4 +1,29 @@
 {
     "prefix": "man!",
-    "token": "hell naw"
+    "token": "token here pls",
+    "username": [
+        "Karen",
+        "Karen Schez",
+        "Kay-Kay",
+        "Chez Karen",
+        "⛅𝔎𝔞𝔯𝔢𝔫",
+        "Krazy K",
+        "[🌼KAREN🌼]",
+        "Kara"
+    ],
+    "badwords": [
+        "fuck",
+        "shit",
+        "cunt",
+        "ass ",
+        "asshole",
+        "nigga",
+        "nibba",
+        "pussy",
+        "dick"
+    ],
+    "badreply": [
+        "This word is not allowed here.",
+        "Don't make me kick you."
+    ]
 }
