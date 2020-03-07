@@ -9,6 +9,7 @@ function run(msg, args) {
      .setTitle('Occult Waifu#1659')
      .setColor([255, 0, 0])
      .setDescription('The creator of Karen Bot and other bots.')
+     .addField('Bio', 'A musician that has no life.')
      .addField('Creations', 'Occult Waifu has made Karen Bot, Kuzey Bot, Nice Bot and Kara Bot')
      //.addField('')
      .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
