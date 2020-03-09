@@ -5,6 +5,7 @@ let config = app.config;
 
 let ArtistNo = new Discord.RichEmbed()
 .setTitle('Artists and Songs')
+.setColor([255, 0, 0])
 .setDescription('To get info about the artist, just type "info" after the artist!')
 .addField('AViVA', 'Cemetery; Psycho')
 .addField('Au/Ra', 'No songs yet, sorry!')
@@ -13,10 +14,10 @@ let ArtistNo = new Discord.RichEmbed()
         
 function run(msg, args) {
     if(args[1] === undefined) return msg.channel.send(ArtistNo);
-    if(args[1].toLowerCase() == "aviva") {
-        if(args[2] === undefined) return msg.channel.send(ArtistNo);
+    else if(args[1].toLowerCase() == "aviva") {
+        if(args[2] === undefined) return msg.reply(ArtistNo);
         if(args[2].toLowerCase() === 'info') {
-            let embed = new Discord.RichEmbed()
+            let infoaviva = new Discord.RichEmbed()
             .setTitle('Musician AViVA')
             .setThumbnail('https://i.imgur.com/wMWTjBh.png')
             .setColor([255, 0, 0])
@@ -30,10 +31,10 @@ function run(msg, args) {
             .addField('Genre', 'Emo pop')
             //.setImage('https://i.imgur.com/wMWTjBh.png')
             .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/yxq3XXl.jpg')
-            msg.channel.send(embed);
+            msg.channel.send(infoaviva);
         }
-        if(args[2].toLowerCase() === "cemetery") {
-            let embed = new Discord.RichEmbed()
+        else if(args[2].toLowerCase() === "cemetery") {
+            let cemeteryaviva = new Discord.RichEmbed()
             .setTitle('AViVA - Cemetery')
             .setColor([255, 0, 0])
             .setDescription('"Cemetery", a song made by AViVA.')
@@ -44,10 +45,10 @@ function run(msg, args) {
             .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/Nb20O4V.png')
             .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
-            msg.channel.send(embed); 
+            msg.channel.send(cemeteryaviva); 
           }
-        if(args[2].toLowerCase() === "psycho") {
-            let embed = new Discord.RichEmbed()
+        else if(args[2].toLowerCase() === "psycho") {
+            let psychoaviva = new Discord.RichEmbed()
             .setTitle('AViVA - PSYCHO')
             .setColor([255, 0, 0])
             .setDescription('"PSYCHO", a song made by AViVA.')
@@ -58,16 +59,17 @@ function run(msg, args) {
             .addField('Apple Music', "https://music.apple.com/us/album/psycho/1483428161?i=1483428166&app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/1mOa90T.jpg')
             .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
-            msg.channel.send(embed);
+            msg.channel.send(psychoaviva);
         }
         else {
             msg.channel.send(ArtistNo);
         }
     }
-    if(args[1].toLowerCase() === 'au/ra') {
-        if(args[2] === undefined) return msg.reply("Song isn't specified/supported.");
-        if(args[2].toLowerCase() === 'info') {
-            let embed = new Discord.RichEmbed()
+    else if(args[1].toLowerCase() === 'au/ra') {
+        if(args[2] === undefined) return msg.reply(ArtistNo);
+        else if(args[2].toLowerCase() === 'info') {
+            let aurainfo = new Discord.RichEmbed()
+            .setColor([255, 0, 0])
             .setTitle('Musician Au/Ra')
             .setThumbnail('https://i.imgur.com/Q6xLNTw.jpg')
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk026O5Rj24bHDn9AyhStmGpgVaCBhg%3A1583612478116&ei=PgJkXvvSBuuArwTDvqKwCw&q=Au%2FRa+musician&oq=Au%2FRa+musician&gs_l=psy-ab.3..0.5623.8840..9036...2.0..0.291.2624.0j13j3......0....1..gws-wiz.......35i39j0i67j0i273j0i20i263j0i22i30.mbXM4WrtNSQ&ved=0ahUKEwj76eCZmInoAhVrwIsKHUOfCLYQ4dUDCAo&uact=5')
@@ -79,7 +81,7 @@ function run(msg, args) {
             .addField('Genre', 'Alternative pop, Electropop')
             //.setImage('https://i.imgur.com/wMWTjBh.png')
             .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/yxq3XXl.jpg')
-            msg.channel.send(embed);
+            msg.channel.send(aurainfo);
         }
         else {
             msg.channel.send(ArtistNo);
