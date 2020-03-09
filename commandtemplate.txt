@@ -1,3 +1,7 @@
+(All commands go into the cmds folder)
+
+
+
 const app = require("../bot.js");
 let client = app.client;
 let Discord = app.Discord;

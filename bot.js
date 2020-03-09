@@ -51,6 +51,7 @@ client.on('message', async msg => {
           if(msg.content.toLowerCase() == value) {
             if(msg.author.id == '391878815263096833') return;
             if(msg.author.id == '472959771964866562') return;
+            if(msg.member.roles.has('680703413322907722')) return;
             msg.delete();
             //msg.reply(badlanguage[Math.floor(Math.random() * badlanguage.length)]);
             msg.reply(config.badreply[Math.floor(Math.random() * config.badreply.length)]);

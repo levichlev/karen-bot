@@ -10,6 +10,7 @@ function run(msg, args) {
   .setThumbnail(client.user.avatarURL)
   .setColor([255, 0, 0])
   .setDescription('I am a Discord bot made by Occult Waifu#1659. Prefix: man!')
+  .addField('Moderation', 'Moderation is enabled on this bot and cannot be changed off at the time being.', true)
   .addField('Help', 'This is the command you see here.')
   .addField('Creator', 'Explains the creator.')
   .addField('Aviva', 'Information about the musician AViVA.')
