@@ -8,7 +8,7 @@ let ArtistNo = new Discord.RichEmbed()
 .setColor([255, 0, 0])
 .setDescription('To get info about the artist, just type "info" after the artist!')
 .addField('AViVA', 'Cemetery; Psycho')
-.addField('Au/Ra', 'No songs yet, sorry!')
+.addField('Au/Ra', 'XGames; Ghost')
 .addField('Why am I here?', 'You didn\'t specify/mistyped an artist or a song')
 .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
         
@@ -82,6 +82,28 @@ function run(msg, args) {
             //.setImage('https://i.imgur.com/wMWTjBh.png')
             .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/yxq3XXl.jpg')
             msg.channel.send(aurainfo);
+        }
+        else if(args[2].toLowerCase() === 'xgames') {
+            let auraxgames = new Discord.RichEmbed()
+            .setColor([255, 0, 0])
+            .setTitle('Au/Ra - X Games')
+            .setDescription('"X Games", a song made by Au/Ra')
+            .addField('Spotify', 'https://open.spotify.com/track/7bZL8w4bwW1a7KFte4Fntv')
+            .addField('YouTube', 'https://youtu.be/bWGH2s2ZX0Y')
+            .setImage('https://i.imgur.com/rBwgDy5.jpg')
+            .setFooter('Author - Occult Waifu#1659.', 'https://i.imgur.com/yxq3XXl.jpg')
+            msg.channel.send(auraxgames)
+        }
+        else if(args[2].toLowerCase() === 'ghost') {
+            let auraghost = new Discord.RichEmbed()
+            .setColor([255, 0, 0])
+            .setTitle('Au/Ra - Ghost')
+            .setDescription('"Ghost", a song made by Au/Ra in collaboration with Alan Walker.\nThis song is in the "Death Stranding" Original Soundtrack.')
+            .addField('Spotify', 'https://open.spotify.com/track/5TgS4dcUAU8EEb506d8wAT')
+            .addField('YouTube', 'https://youtu.be/1DCiUhNn9rc')
+            .setImage('https://i.imgur.com/52yz75l.jpg')
+            .setFooter('Author - Occult Waifu#1659.', 'https://i.imgur.com/yxq3XXl.jpg')
+            msg.channel.send(auraghost)
         }
         else {
             msg.channel.send(ArtistNo);
