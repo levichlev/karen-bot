@@ -16,4 +16,4 @@ Also, add your discord username in the command somewhere (maybe with a comment) 
 I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm a musician.
 
 # Latest commit
-Added some Au/Ra songs to artist.js, updated help.js, added Rich Embed to information.js and removed owner only, changed the shutdown command to send to console too.
+Updated the creator file to fix an error and change the bots. Updated the command template with information. Changed how the songs list display in rich embed.
