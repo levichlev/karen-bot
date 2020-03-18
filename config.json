@@ -1,6 +1,9 @@
 {
     "prefix": "man!",
     "token": "token here pls",
+    "logo": "https://i.imgur.com/I5RIsmO.png",
+    "creator": "unc0ver#1659",
+    "embedolor": [255, 0, 0],
     "username": [
         "Karen",
         "Karen Schez",

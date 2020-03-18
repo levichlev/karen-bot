@@ -11,11 +11,12 @@ function run(msg, args) {
      else {
          let embed = new Discord.RichEmbed()
          .setTitle(member.username + '\'s Discord profile')
+         .setColor(config.embedcolor)
          .addField('Discord Name', member.tag)
          .addField('Join date', member.createdAt)
          .addField('Last sent message ID', member.lastMessageID)
-         .setColor([255, 0, 0])
-         .setImage(member.avatarURL);
+         .setImage(member.avatarURL)
+         .setFooter('Author - Occult Waifu#1659.', config.logo)
          msg.channel.send(embed);   
      }
 }

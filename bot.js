@@ -6,9 +6,7 @@ let commands = {};
 
 
 client.once('ready', () => {
-    //console.log('H-Huh what happened? I was asleep.');
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-    //client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
     client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
     client.user.setUsername(config.username[Math.floor(Math.random() * config.username.length)]);
     fs.readdir("./cmds", function(err, files) {

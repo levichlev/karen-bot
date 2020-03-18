@@ -8,14 +8,14 @@ function run(msg, args) {
   var help = new Discord.RichEmbed()
   .setTitle(client.user.username)
   .setThumbnail(client.user.avatarURL)
-  .setColor([255, 0, 0])
-  .setDescription('I am a Discord bot made by Occult Waifu#1659. Prefix: man!')
+  .setColor(config.embedcolor)
+  .setDescription(`I am a Discord bot made by Occult Waifu#1659. Prefix: ${config.prefix}`)
   .addField('Moderation', 'Moderation is enabled on this bot and cannot be changed off at the time being.', true)
   .addField('Help', 'This is the command you see here.')
   .addField('Creator', 'Explains the creator.')
   .addField('Artist', 'Information about artists.')
   .addField('Information', 'Provides information about a user.')
-  .setFooter('Author - Occult Waifu#1659.', 'https://i.imgur.com/yxq3XXl.jpg')
+  .setFooter('Author - Occult Waifu#1659.', config.logo)
   msg.channel.send(help);
 }
 

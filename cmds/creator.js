@@ -6,13 +6,13 @@ const config = app.config;
 function run(msg, args) {
      // code here will run
      let embed = new Discord.RichEmbed()
-     .setTitle('Occult Waifu#1659')
-     .setColor([255, 0, 0])
+     .setTitle(config.creator)
+     .setColor(config.embedcolor)
      .setDescription('The creator of Karen Bot and other bots.')
      .addField('Auto-Biography', 'A musician that has no life.')
      .addField('Creations', 'Occult Waifu has made Karen Bot, Kuzey Bot and Fallout bot.')
      //.addField('')
-     .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
+     .setFooter(`Author - ${config.creator}`, config.logo)
      msg.channel.send(embed);
 }
 exports.run = run;
