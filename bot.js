@@ -6,10 +6,8 @@ let commands = {};
 
 
 client.once('ready', () => {
-    //console.log('H-Huh what happened? I was asleep.');
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
-    //client.user.setActivity(activitozo[Math.floor(Math.random() * activitozo.length)], { type: "WATCHING" });
-    client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
+    client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
     client.user.setUsername(config.username[Math.floor(Math.random() * config.username.length)]);
     fs.readdir("./cmds", function(err, files) {
         files.forEach(function(name) {
@@ -27,13 +25,13 @@ client.once('disconnect', () => {
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
   console.log(`I have been removed from: ${guild.name} (id: ${guild.id})`);
-  client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
+  client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
 });
 
 client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-    client.user.setActivity(`${client.guilds.size} servers | man!help`, { type: "WATCHING" });
+    client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
   });
 client.on('error', console.error);
 

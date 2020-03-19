@@ -5,12 +5,12 @@ let config = app.config;
 
 let ArtistNo = new Discord.RichEmbed()
 .setTitle('Artists and Songs')
-.setColor([255, 0, 0])
+.setColor(config.embedcolor)
 .setDescription('To get info about the artist, just type "info" after the artist!')
-.addField('AViVA', 'Cemetery; Psycho')
-.addField('Au/Ra', 'No songs yet, sorry!')
+.addField('AViVA', 'Cemetery\nPsycho')
+.addField('Au/Ra', 'XGames\nGhost')
 .addField('Why am I here?', 'You didn\'t specify/mistyped an artist or a song')
-.setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
+.setFooter(`Author - ${config.creator}`, config.logo)
         
 function run(msg, args) {
     if(args[1] === undefined) return msg.channel.send(ArtistNo);
@@ -20,7 +20,7 @@ function run(msg, args) {
             let infoaviva = new Discord.RichEmbed()
             .setTitle('Musician AViVA')
             .setThumbnail('https://i.imgur.com/wMWTjBh.png')
-            .setColor([255, 0, 0])
+            .setColor(config.embedcolor)
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ACYBGNQ9yFLFLSxYhJ1il92GBwtdqyC2Tg%3A1572177651603&ei=84a1Xam3JIqxrgTg8a2QDA&q=aviva+%28musician%29&oq=aviva+%28m&gs_l=psy-ab.3.0.35i39j0i22i30l9.5094.5803..6979...0.2..0.142.378.0j3......0....1..gws-wiz.......0i71j0j0i10j0i203.Q82xyHqSnoc')
             .setDescription('Aviva Anastasia Payne')
             .addField('Date of birth', 'May 6, 1994')
@@ -30,13 +30,13 @@ function run(msg, args) {
             .addField('Top track in Spotify', 'As of 27/10/2019 the most popular track is GRRRLS')
             .addField('Genre', 'Emo pop')
             //.setImage('https://i.imgur.com/wMWTjBh.png')
-            .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/yxq3XXl.jpg')
+            .setFooter(`Author - ${config.creator} Source: Wikipedia`, config.logo)
             msg.channel.send(infoaviva);
         }
         else if(args[2].toLowerCase() === "cemetery") {
             let cemeteryaviva = new Discord.RichEmbed()
             .setTitle('AViVA - Cemetery')
-            .setColor([255, 0, 0])
+            .setColor(config.embedcolor)
             .setDescription('"Cemetery", a song made by AViVA.')
             .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
             .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
@@ -44,13 +44,13 @@ function run(msg, args) {
             .addField('Deezer', 'https://www.deezer.com/en/album/113911632')
             .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/Nb20O4V.png')
-            .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
+            .setFooter(`Author - ${config.creator}`, config.logo)
             msg.channel.send(cemeteryaviva); 
           }
         else if(args[2].toLowerCase() === "psycho") {
             let psychoaviva = new Discord.RichEmbed()
             .setTitle('AViVA - PSYCHO')
-            .setColor([255, 0, 0])
+            .setColor(config.embedcolor)
             .setDescription('"PSYCHO", a song made by AViVA.')
             .addField('Youtube', "https://www.youtube.com/watch?v=7psJyJ-wZ5s")
             .addField('Spotify', "https://open.spotify.com/track/5ndQfV7CYyOp6l6xW3BJQe")
@@ -58,7 +58,7 @@ function run(msg, args) {
             .addField('Deezer', 'https://www.deezer.com/us/track/775102532')
             .addField('Apple Music', "https://music.apple.com/us/album/psycho/1483428161?i=1483428166&app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/1mOa90T.jpg')
-            .setFooter('Author - Occult Waifu#1659', 'https://i.imgur.com/yxq3XXl.jpg')
+            .setFooter(`Author - ${config.creator}`, config.logo)
             msg.channel.send(psychoaviva);
         }
         else {
@@ -80,8 +80,30 @@ function run(msg, args) {
             .addField('Top track in Spotify', 'As of 07/03/2020 the most popular track is Panic Room')
             .addField('Genre', 'Alternative pop, Electropop')
             //.setImage('https://i.imgur.com/wMWTjBh.png')
-            .setFooter('Author - Occult Waifu#1659. Source: Wikipedia', 'https://i.imgur.com/yxq3XXl.jpg')
+            .setFooter(`Author - ${config.creator} Source: Wikipedia`, config.logo)
             msg.channel.send(aurainfo);
+        }
+        else if(args[2].toLowerCase() === 'xgames') {
+            let auraxgames = new Discord.RichEmbed()
+            .setColor(config.embedcolor)
+            .setTitle('Au/Ra - X Games')
+            .setDescription('"X Games", a song made by Au/Ra')
+            .addField('Spotify', 'https://open.spotify.com/track/7bZL8w4bwW1a7KFte4Fntv')
+            .addField('YouTube', 'https://youtu.be/bWGH2s2ZX0Y')
+            .setImage('https://i.imgur.com/rBwgDy5.jpg')
+            .setFooter(`Author - ${config.creator}`, config.logo)
+            msg.channel.send(auraxgames)
+        }
+        else if(args[2].toLowerCase() === 'ghost') {
+            let auraghost = new Discord.RichEmbed()
+            .setColor(config.embedcolor)
+            .setTitle('Au/Ra - Ghost')
+            .setDescription('"Ghost", a song made by Au/Ra in collaboration with Alan Walker.\nThis song is in the "Death Stranding" Original Soundtrack.')
+            .addField('Spotify', 'https://open.spotify.com/track/5TgS4dcUAU8EEb506d8wAT')
+            .addField('YouTube', 'https://youtu.be/1DCiUhNn9rc')
+            .setImage('https://i.imgur.com/52yz75l.jpg')
+            .setFooter(`Author - ${config.creator}`, config.logo)
+            msg.channel.send(auraghost)
         }
         else {
             msg.channel.send(ArtistNo);

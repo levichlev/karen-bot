@@ -16,4 +16,4 @@ Also, add your discord username in the command somewhere (maybe with a comment) 
 I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm a musician.
 
 # Latest commit
-Updated README.md with a purpose.
+Updated the creator file to fix an error and change the bots. Updated the command template with information. Changed how the songs list display in rich embed.
