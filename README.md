@@ -16,4 +16,6 @@ Also, add your discord username in the command somewhere (maybe with a comment) 
 I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm a musician.
 
 # Latest commit
-Updated the creator file to fix an error and change the bots. Updated the command template with information. Changed how the songs list display in rich embed.
+Bot won't change username everytime it logs on. 
+In config changed prefix, creator username and embedcolor.
+In artist added a new artist (MARINA) and a song by the artist (FROOT).
