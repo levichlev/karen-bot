@@ -6,9 +6,10 @@ let config = app.config;
 let ArtistNo = new Discord.RichEmbed()
 .setTitle('Artists and Songs')
 .setColor(config.embedcolor)
-.setDescription('To get info about the artist, just type "info" after the artist!')
+.setDescription('To get info about the artist, just type "info" after the artist!\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
 .addField('AViVA', 'Cemetery\nPsycho')
 .addField('Au/Ra', 'XGames\nGhost')
+.addField('MARINA', 'FROOT')
 .addField('Why am I here?', 'You didn\'t specify/mistyped an artist or a song')
 .setFooter(`Author - ${config.creator}`, config.logo)
         
@@ -22,14 +23,13 @@ function run(msg, args) {
             .setThumbnail('https://i.imgur.com/wMWTjBh.png')
             .setColor(config.embedcolor)
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ACYBGNQ9yFLFLSxYhJ1il92GBwtdqyC2Tg%3A1572177651603&ei=84a1Xam3JIqxrgTg8a2QDA&q=aviva+%28musician%29&oq=aviva+%28m&gs_l=psy-ab.3.0.35i39j0i22i30l9.5094.5803..6979...0.2..0.142.378.0j3......0....1..gws-wiz.......0i71j0j0i10j0i203.Q82xyHqSnoc')
-            .setDescription('Aviva Anastasia Payne')
+            .setDescription('Aviva Anastasia Payne\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
             .addField('Date of birth', 'May 6, 1994')
             .addField('Place of birth', 'Sydney, New South Wales, Australia.')
             .addField('Current living place', 'Los Angeles, California')
             .addField('Latest release', 'PSYCHO')
             .addField('Top track in Spotify', 'As of 27/10/2019 the most popular track is GRRRLS')
             .addField('Genre', 'Emo pop')
-            //.setImage('https://i.imgur.com/wMWTjBh.png')
             .setFooter(`Author - ${config.creator} Source: Wikipedia`, config.logo)
             msg.channel.send(infoaviva);
         }
@@ -37,7 +37,7 @@ function run(msg, args) {
             let cemeteryaviva = new Discord.RichEmbed()
             .setTitle('AViVA - Cemetery')
             .setColor(config.embedcolor)
-            .setDescription('"Cemetery", a song made by AViVA.')
+            .setDescription('"Cemetery", a song made by AViVA.\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
             .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
             .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
             .addField('Soundcloud', "https://soundcloud.com/roachiey/aviva-cemetery")
@@ -51,7 +51,7 @@ function run(msg, args) {
             let psychoaviva = new Discord.RichEmbed()
             .setTitle('AViVA - PSYCHO')
             .setColor(config.embedcolor)
-            .setDescription('"PSYCHO", a song made by AViVA.')
+            .setDescription('"PSYCHO", a song made by AViVA.\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
             .addField('Youtube', "https://www.youtube.com/watch?v=7psJyJ-wZ5s")
             .addField('Spotify', "https://open.spotify.com/track/5ndQfV7CYyOp6l6xW3BJQe")
             .addField('Soundcloud', "https://soundcloud.com/thisisaviva/aviva-psycho")
@@ -69,7 +69,7 @@ function run(msg, args) {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         else if(args[2].toLowerCase() === 'info') {
             let aurainfo = new Discord.RichEmbed()
-            .setColor([255, 0, 0])
+            .setColor(config.embedcolor)
             .setTitle('Musician Au/Ra')
             .setThumbnail('https://i.imgur.com/Q6xLNTw.jpg')
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk026O5Rj24bHDn9AyhStmGpgVaCBhg%3A1583612478116&ei=PgJkXvvSBuuArwTDvqKwCw&q=Au%2FRa+musician&oq=Au%2FRa+musician&gs_l=psy-ab.3..0.5623.8840..9036...2.0..0.291.2624.0j13j3......0....1..gws-wiz.......35i39j0i67j0i273j0i20i263j0i22i30.mbXM4WrtNSQ&ved=0ahUKEwj76eCZmInoAhVrwIsKHUOfCLYQ4dUDCAo&uact=5')
@@ -107,6 +107,35 @@ function run(msg, args) {
         }
         else {
             msg.channel.send(ArtistNo);
+        }
+    }
+    else if(args[1].toLowerCase() === 'marina') {
+        if(args[2] === undefined) return msg.reply(ArtistNo);
+        else if(args[2].toLowerCase() === 'info') {
+            let marinainfo = new Discord.RichEmbed()
+            .setColor(config.embedcolor)
+            .setTitle('Musician MARINA')
+            .setThumbnail('https://peoplepill.com/media/people/thumbs/M/marina-and-the-diamonds.jpg')
+            .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk00KnrDGNH-WDLTJ0_dMQR-WGYL60w%3A1587118553474&ei=2YGZXpixHIGOrwTQrY-QBg&q=MARINA+and+the+diamonds+musician&oq=MARINA+and+the+diamonds+musician&gs_lcp=CgZwc3ktYWIQAzoECCMQJzoGCAAQBxAeOgIIADoECAAQHjoGCAAQCBAeShIIFxIOMTAtMjAxZzEzNGcxMzJKDAgYEggxMC00ZzFnMVD1TViCZGDMZGgBcAB4AIAB1AKIAZAbkgEIMC4xNC4zLjKYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjYgeKsne_oAhUBx4sKHdDWA2IQ4dUDCAs&uact=5')
+            .setDescription('Marina Lambrini Diamandis')
+            .addField('Date of birth', '10 October 1985')
+            .addField('Place of birth', 'Brynmawr, Wales')
+            .addField('Latest release', 'Love + Fear Acoustic EP')
+            .addField('Top track in Spotify', 'As of 17/04/2020 the most popular album is About Love (From The Netflix Film “To All The Boys: P.S. I Still Love You”)')
+            .addField('Genre', 'Pop, Indie pop, Electropop, New wave')
+            .setFooter(`Author - ${config.creator} Source: Wikipedia`, config.logo)
+            msg.channel.send(marinainfo)
+        }
+        else if(args[2].toLowerCase() === 'froot') {
+            let marinafroot = new Discord.RichEmbed()
+            .setColor(config.embedcolor)
+            .setTitle('MARINA AND THE DIAMONDS - FROOT')
+            .setDescription('"FROOT", a song made by MARINA AND THE DIAMONDS.')
+            .addField('Spotify', 'https://open.spotify.com/track/6fk13PEdduHc2HG6JX6imT')
+            .addField('Youtube', 'https://www.youtube.com/watch?v=WZzcY7ASQno')
+            .setImage('https://upload.wikimedia.org/wikipedia/en/2/2d/Marina_and_the_Diamonds_-_Froot_%28album%29.png')
+            .setFooter(`Author - ${config.creator}`, config.logo)
+            msg.channel.send(marinafroot)
         }
     }
     else {

@@ -8,7 +8,7 @@ let commands = {};
 client.once('ready', () => {
     console.log(`Bot has started, with ${client.users.size} users, in ${client.channels.size} channels of ${client.guilds.size} guilds.`);
     client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
-    client.user.setUsername(config.username[Math.floor(Math.random() * config.username.length)]);
+    //client.user.setUsername(config.username[Math.floor(Math.random() * config.username.length)]);
     fs.readdir("./cmds", function(err, files) {
         files.forEach(function(name) {
             commands[name.split(".")[0]] = require("./cmds/" + name);
