@@ -1,0 +1,13 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.8492826b9993b23f6850be620a450dbaa1262bf9 }}
+        issue-message: 'Greetings! Thanks for contributing to Karen Bot!'
+        pr-message: 'Greetings! Thanks for contributing to Karen Bot!'
