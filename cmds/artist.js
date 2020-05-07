@@ -6,7 +6,7 @@ let config = app.config;
 let ArtistNo = new Discord.RichEmbed()
 .setTitle('Artists and Songs')
 .setColor(config.embedcolor)
-.setDescription('To get info about the artist, just type "info" after the artist!\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
+.setDescription('To get info about the artist, just type "info" after the artist!')
 .addField('AViVA', 'Cemetery\nPsycho')
 .addField('Au/Ra', 'XGames\nGhost')
 .addField('MARINA', 'FROOT')
@@ -21,9 +21,9 @@ function run(msg, args) {
             let infoaviva = new Discord.RichEmbed()
             .setTitle('Musician AViVA')
             .setThumbnail('https://i.imgur.com/wMWTjBh.png')
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ACYBGNQ9yFLFLSxYhJ1il92GBwtdqyC2Tg%3A1572177651603&ei=84a1Xam3JIqxrgTg8a2QDA&q=aviva+%28musician%29&oq=aviva+%28m&gs_l=psy-ab.3.0.35i39j0i22i30l9.5094.5803..6979...0.2..0.142.378.0j3......0....1..gws-wiz.......0i71j0j0i10j0i203.Q82xyHqSnoc')
-            .setDescription('Aviva Anastasia Payne\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
+            .setDescription('Aviva Anastasia Payne')
             .addField('Date of birth', 'May 6, 1994')
             .addField('Place of birth', 'Sydney, New South Wales, Australia.')
             .addField('Current living place', 'Los Angeles, California')
@@ -36,13 +36,11 @@ function run(msg, args) {
         else if(args[2].toLowerCase() === "cemetery") {
             let cemeteryaviva = new Discord.RichEmbed()
             .setTitle('AViVA - Cemetery')
-            .setColor(config.embedcolor)
-            .setDescription('"Cemetery", a song made by AViVA.\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
+            .setURL('https://ditto.fm/cemetery')
+            .setColor(config.color)
+            .setDescription('"Cemetery", a song made by AViVA.')
             .addField('Youtube', "https://www.youtube.com/watch?v=JlJ4bhS86Gc")
             .addField('Spotify', "https://open.spotify.com/album/7qSs2TMwUdozqNiuOcG6xm")
-            .addField('Soundcloud', "https://soundcloud.com/roachiey/aviva-cemetery")
-            .addField('Deezer', 'https://www.deezer.com/en/album/113911632')
-            .addField('Apple Music', "https://music.apple.com/us/album/cemetery-single/1482584588?app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/Nb20O4V.png')
             .setFooter(`Author - ${config.creator}`, config.logo)
             msg.channel.send(cemeteryaviva); 
@@ -50,13 +48,11 @@ function run(msg, args) {
         else if(args[2].toLowerCase() === "psycho") {
             let psychoaviva = new Discord.RichEmbed()
             .setTitle('AViVA - PSYCHO')
-            .setColor(config.embedcolor)
-            .setDescription('"PSYCHO", a song made by AViVA.\n**WARNING:** After 03/05/2020 AViVA will be **removed** unless someone uses it.')
+            .setURL('https://ditto.fm/psycho')
+            .setColor(config.color)
+            .setDescription('"PSYCHO", a song made by AViVA.')
             .addField('Youtube', "https://www.youtube.com/watch?v=7psJyJ-wZ5s")
             .addField('Spotify', "https://open.spotify.com/track/5ndQfV7CYyOp6l6xW3BJQe")
-            .addField('Soundcloud', "https://soundcloud.com/thisisaviva/aviva-psycho")
-            .addField('Deezer', 'https://www.deezer.com/us/track/775102532')
-            .addField('Apple Music', "https://music.apple.com/us/album/psycho/1483428161?i=1483428166&app=music&ign-mpt=uo%3D4")
             .setImage('https://i.imgur.com/1mOa90T.jpg')
             .setFooter(`Author - ${config.creator}`, config.logo)
             msg.channel.send(psychoaviva);
@@ -69,7 +65,7 @@ function run(msg, args) {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         else if(args[2].toLowerCase() === 'info') {
             let aurainfo = new Discord.RichEmbed()
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setTitle('Musician Au/Ra')
             .setThumbnail('https://i.imgur.com/Q6xLNTw.jpg')
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk026O5Rj24bHDn9AyhStmGpgVaCBhg%3A1583612478116&ei=PgJkXvvSBuuArwTDvqKwCw&q=Au%2FRa+musician&oq=Au%2FRa+musician&gs_l=psy-ab.3..0.5623.8840..9036...2.0..0.291.2624.0j13j3......0....1..gws-wiz.......35i39j0i67j0i273j0i20i263j0i22i30.mbXM4WrtNSQ&ved=0ahUKEwj76eCZmInoAhVrwIsKHUOfCLYQ4dUDCAo&uact=5')
@@ -85,7 +81,7 @@ function run(msg, args) {
         }
         else if(args[2].toLowerCase() === 'xgames') {
             let auraxgames = new Discord.RichEmbed()
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setTitle('Au/Ra - X Games')
             .setDescription('"X Games", a song made by Au/Ra')
             .addField('Spotify', 'https://open.spotify.com/track/7bZL8w4bwW1a7KFte4Fntv')
@@ -96,7 +92,7 @@ function run(msg, args) {
         }
         else if(args[2].toLowerCase() === 'ghost') {
             let auraghost = new Discord.RichEmbed()
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setTitle('Au/Ra - Ghost')
             .setDescription('"Ghost", a song made by Au/Ra in collaboration with Alan Walker.\nThis song is in the "Death Stranding" Original Soundtrack.')
             .addField('Spotify', 'https://open.spotify.com/track/5TgS4dcUAU8EEb506d8wAT')
@@ -113,7 +109,7 @@ function run(msg, args) {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         else if(args[2].toLowerCase() === 'info') {
             let marinainfo = new Discord.RichEmbed()
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setTitle('Musician MARINA')
             .setThumbnail('https://peoplepill.com/media/people/thumbs/M/marina-and-the-diamonds.jpg')
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk00KnrDGNH-WDLTJ0_dMQR-WGYL60w%3A1587118553474&ei=2YGZXpixHIGOrwTQrY-QBg&q=MARINA+and+the+diamonds+musician&oq=MARINA+and+the+diamonds+musician&gs_lcp=CgZwc3ktYWIQAzoECCMQJzoGCAAQBxAeOgIIADoECAAQHjoGCAAQCBAeShIIFxIOMTAtMjAxZzEzNGcxMzJKDAgYEggxMC00ZzFnMVD1TViCZGDMZGgBcAB4AIAB1AKIAZAbkgEIMC4xNC4zLjKYAQCgAQGqAQdnd3Mtd2l6&sclient=psy-ab&ved=0ahUKEwjYgeKsne_oAhUBx4sKHdDWA2IQ4dUDCAs&uact=5')
@@ -128,7 +124,7 @@ function run(msg, args) {
         }
         else if(args[2].toLowerCase() === 'froot') {
             let marinafroot = new Discord.RichEmbed()
-            .setColor(config.embedcolor)
+            .setColor(config.color)
             .setTitle('MARINA AND THE DIAMONDS - FROOT')
             .setDescription('"FROOT", a song made by MARINA AND THE DIAMONDS.')
             .addField('Spotify', 'https://open.spotify.com/track/6fk13PEdduHc2HG6JX6imT')

@@ -1,9 +1,9 @@
 {
     "prefix": "m!",
-    "token": "token here pls",
+    "token": "NTk5Mjg5Njg3NzQzMzk3ODg5.Xp6rNA.7-xKD7GmDd0W-pqEBF25jZmTnzA",
     "logo": "https://i.imgur.com/yxq3XXl.jpg",
     "creator": "Occult Waifu#1659",
-    "embedcolor": [135, 206, 235],
+    "color": [135, 206, 235],
     "username": [
         "Karen",
         "Karen Schez",
@@ -32,7 +32,7 @@
         "дебил",
         "хуи"
     ],
-    "badreply": [
+    "swearreply": [
         "I am sorry to inform you, but you're already dead :)",
         "I know the manager of this restaurant!",
         "You keep calling me a psycho, I was scared but I came prepared. You make me a psycho.",

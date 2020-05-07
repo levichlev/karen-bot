@@ -7,11 +7,11 @@ function run(msg, args) {
      // code here will run
      let embed = new Discord.RichEmbed()
      .setTitle(config.creator)
-     .setColor(config.embedcolor)
+     .setImage(config.logo)
+     .setColor(config.color)
      .setDescription('The creator of Karen Bot and other bots.')
      .addField('Auto-Biography', 'A musician that has no life.')
-     .addField('Creations', 'Occult Waifu has made Karen Bot, Kuzey Bot and Fallout bot.')
-     //.addField('')
+     .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are defunct.')
      .setFooter(`Author - ${config.creator}`, config.logo)
      msg.channel.send(embed);
 }

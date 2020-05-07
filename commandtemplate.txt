@@ -1,5 +1,5 @@
 (All commands go into the cmds folder)
-(If making Rich Embed, put this ".setFooter('Author - YourDiscordName#1010', 'DirectImgurLink')")
+(If making Rich Embed, put this ".setFooter('Author - YourDiscordName#1010', 'DirectImgurLinkToProfileImage')")
 
 
 

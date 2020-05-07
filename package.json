@@ -4,7 +4,7 @@
   "description": "The marvelous Karen brought to Discord!",
   "main": "bot.js",
   "scripts": {
-    "test": "ping"
+    "test": "> >ping"
   },
   "author": "Occult Waifu#1659",
   "license": "ISC",

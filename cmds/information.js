@@ -6,17 +6,16 @@ let config = app.config;
 function run(msg, args) {
      // code here will run
      let member = msg.mentions.users.first();
-     //if(msg.author.id == '286900438283059200') return msg.reply('Give me money first.');
      if(member == undefined) msg.reply('Please tell me who to spy on.');
      else {
          let embed = new Discord.RichEmbed()
          .setTitle(member.username + '\'s Discord profile')
-         .setColor(config.embedcolor)
+         .setColor(config.color)
          .addField('Discord Name', member.tag)
          .addField('Join date', member.createdAt)
          .addField('Last sent message ID', member.lastMessageID)
          .setImage(member.avatarURL)
-         .setFooter('Author - Occult Waifu#1659.', config.logo)
+         .setFooter(`Author - ${config.creator}`, config.logo)
          msg.channel.send(embed);   
      }
 }
