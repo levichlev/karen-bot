@@ -46,9 +46,8 @@ client.on('message', async msg => {
       var message = msg.content.toLowerCase();
       config.badwords.forEach(function(value) {
           if(msg.content.toLowerCase() == value) {
-            if(msg.author.id == '391878815263096833') return;
-            if(msg.author.id == '472959771964866562') return;
-            if(msg.member.roles.has('680703413322907722')) return;
+            if (msg.author.id == '391878815263096833' || '650742282596646914' || '472959771964866562' || '166601149774954496') return;
+            if (msg.member.roles.has('680703413322907722' || '651511884524158976')) return;
             msg.delete();
             msg.reply(config.swearreply[Math.floor(Math.random() * config.swearreply.length)]);
           }
