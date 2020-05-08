@@ -19,6 +19,14 @@ Also, add your discord username in the command somewhere (maybe with a comment) 
 I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm a musician.
 
 # Latest commit
-Bot won't change username everytime it logs on.
-In config changed prefix, creator username and embedcolor.
-In artist added a new artist (MARINA) and a song by the artist (FROOT).
+MEEEEEEGAAAAAUUUUUUPDAAATE!!!!!
+This includes 13 new commands!
+Webhook
+Top reddit post
+Say command
+Random reddit post
+Purge, makerole, kick and ban (for all you admins)
+Get a users picture
+New reddit post
+Jailbreak info
+Discord servers

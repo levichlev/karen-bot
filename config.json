@@ -1,12 +1,12 @@
 {
     "prefix": "m!",
-    "botversion": "2",
-    "token": "NzAxMDY1MDQ1NjkzNjkzOTYy.XpsDvA.rQBTu81U6nWN0SzAtexc0vZJBss",
+    "botversion": "3",
+    "token": "lol",
     "logo": "https://i.imgur.com/yxq3XXl.jpg",
     "creator": "Occult Waifu#1659",
     "color": [135, 206, 235],
     "colordecimal": "8900331",
-    "botname": "Karen Bot test",
+    "botname": "Karen Bot",
     "badwords": [
         "fuck",
         "shit",
@@ -40,6 +40,6 @@
         "Finally, you're here.",
         "Can you help me?"
     ],
-    "webhookid": "707497930356949032",
-    "webhooktoken": "_brJonh9o-DAhKTmmolPRm8X84dR4uxnbZr_JLRfpIDop3YHbryqOivLGr4FzMctRPZr"
+    "webhookid": "i am an idiot lmfao",
+    "webhooktoken": "this too"
 }
