@@ -67,7 +67,7 @@ function run(msg, args) {
             let aurainfo = new Discord.RichEmbed()
             .setColor(config.color)
             .setTitle('Musician Au/Ra')
-            .setThumbnail('https://i.imgur.com/Q6xLNTw.jpg')
+            .setThumbnail('https://66.media.tumblr.com/2113f608cb00e08e3d357f2ca5e5a7db/21941742562c2449-28/s1280x1920/c7191b070c63fc9f66346fe682246bd3914aa047.jpg')
             .setURL('https://www.google.com/search?rlz=1C1CHBF_enLV855LV855&sxsrf=ALeKk026O5Rj24bHDn9AyhStmGpgVaCBhg%3A1583612478116&ei=PgJkXvvSBuuArwTDvqKwCw&q=Au%2FRa+musician&oq=Au%2FRa+musician&gs_l=psy-ab.3..0.5623.8840..9036...2.0..0.291.2624.0j13j3......0....1..gws-wiz.......35i39j0i67j0i273j0i20i263j0i22i30.mbXM4WrtNSQ&ved=0ahUKEwj76eCZmInoAhVrwIsKHUOfCLYQ4dUDCAo&uact=5')
             .setDescription('Jamie Lou Stenzel')
             .addField('Date of birth', '15 May, 2002')

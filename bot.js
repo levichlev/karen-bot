@@ -2,6 +2,10 @@ const Discord = require('discord.js');
 const fs = require('fs');
 const client = new Discord.Client();
 const config = require("./config.json");
+var Twitter = require('twitter');
+var snekfetch = require("snekfetch")
+const request = require('snekfetch');
+const axios = require("axios");
 let commands = {};
 
 
@@ -16,10 +20,12 @@ client.once('ready', () => {
 });
 client.once('reconnecting', () => {
     console.log('Reconnecting!');
-    });
+    client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix + `help`, { type: "WATCHING" });
+});
 client.once('disconnect', () => {
     console.log('Disconnect!');
-    });
+    client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix + `help`, { type: "WATCHING" });
+});
 
 client.on("guildDelete", guild => {
   // this event triggers when the bot is removed from a guild.
@@ -31,10 +37,21 @@ client.on("guildCreate", guild => {
     // This event triggers when the bot joins a guild.
     console.log(`New guild joined: ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     client.user.setActivity(`${client.guilds.size} servers | ` + config.prefix +`help`, { type: "WATCHING" });
-  });
+});
+
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name == 'new-friends');
+  const rules = member.guild.channels.find(ch => ch.name == 'rules')
+  // Do nothing if the channel wasn't found on this server
+  if (!channel) return;
+  if (!rules) return;
+  // Send the message, mentioning the member
+  channel.send(`Welcome to this server, ${member}. Please read ${rules}`);
+  if (member.guild.id == '615956991658950658') member.addRole('615958021759041545')
+});
+
 client.on('error', console.error);
-
-
 
 client.on('message', async msg => {
       const args = msg.content.substr(config.prefix.length).split(" ");
@@ -47,7 +64,7 @@ client.on('message', async msg => {
       config.badwords.forEach(function(value) {
           if(msg.content.toLowerCase() == value) {
             if (msg.author.id == '391878815263096833' || '650742282596646914' || '472959771964866562' || '166601149774954496') return;
-            if (msg.member.roles.has('680703413322907722' || '651511884524158976')) return;
+            if(msg.member.roles.has('680703413322907722')) return;
             msg.delete();
             msg.reply(config.swearreply[Math.floor(Math.random() * config.swearreply.length)]);
           }
@@ -73,14 +90,6 @@ client.on('message', async msg => {
       }
 });
 
-client.on('guildMemberAdd', member => {
-  // Send the message to a designated channel on a server:
-  const channel = member.guild.channels.find(ch => ch.name === 'new-friends');
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Welcome to this server, ${member}. Please read \#rules.`);
-});
 
 client.login(config.token);
 exports.client = client;

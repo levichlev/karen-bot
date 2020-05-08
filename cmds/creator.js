@@ -9,9 +9,9 @@ function run(msg, args) {
      .setTitle(config.creator)
      .setImage(config.logo)
      .setColor(config.color)
-     .setDescription('The creator of Karen Bot and other bots.')
+     .setDescription(`The creator of ${config.botname} and other bots.`)
      .addField('Auto-Biography', 'A musician that has no life.')
-     .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are defunct.')
+     .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are now defunct.')
      .setFooter(`Author - ${config.creator}`, config.logo)
      msg.channel.send(embed);
 }

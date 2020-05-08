@@ -1,19 +1,12 @@
 {
     "prefix": "m!",
-    "token": "pls",
+    "botversion": "2",
+    "token": "NzAxMDY1MDQ1NjkzNjkzOTYy.XpsDvA.rQBTu81U6nWN0SzAtexc0vZJBss",
     "logo": "https://i.imgur.com/yxq3XXl.jpg",
     "creator": "Occult Waifu#1659",
     "color": [135, 206, 235],
-    "username": [
-        "Karen",
-        "Karen Schez",
-        "Kay-Kay",
-        "Chez Karen",
-        "⛅𝔎𝔞𝔯𝔢𝔫",
-        "Krazy K",
-        "[🌼KAREN🌼]",
-        "Kara"
-    ],
+    "colordecimal": "8900331",
+    "botname": "Karen Bot test",
     "badwords": [
         "fuck",
         "shit",
@@ -30,7 +23,8 @@
         "сука",
         "debil",
         "дебил",
-        "хуи"
+        "хуи",
+        "ree"
     ],
     "swearreply": [
         "I am sorry to inform you, but you're already dead :)",
@@ -39,5 +33,13 @@
         "You don't have to fit into the format. Oh, but it's okay to be different. 'Cause baby, so am I (So am I, so am I, so am I-I-I-I-I).",
         "Hell raising, hair raising, I'm ready for the worst. So frightening, face whitening, Fear that you can't reverse. My phone has no signal, It's making my skin crawl, The silence is so loud. The lights spark and flicker, With monsters much bigger, that I can control now. Welcome to the panic room, Where all your darkest fears are gonna come for you, come for you. Welcome to the panic room, You'll know I wasn't joking, When you see them too, see them too. Welcome to the panic room.",
         "Everybody's scared so dance in the dark, Da-dance in the dark, da-dance in the dark, Party with your fears, da-dance in the dark, Da-dance with the dark, da-dance in the dark."
-    ]
+    ],
+    "helpcreatorreply": [
+        "Testing today, are we?",
+        "Good to see you, creator.",
+        "Finally, you're here.",
+        "Can you help me?"
+    ],
+    "webhookid": "707497930356949032",
+    "webhooktoken": "_brJonh9o-DAhKTmmolPRm8X84dR4uxnbZr_JLRfpIDop3YHbryqOivLGr4FzMctRPZr"
 }
