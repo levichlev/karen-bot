@@ -11,22 +11,17 @@ Karen Bot's support server - https://discord.gg/9PxEPpT
 
 My personal server with all my bots - https://discord.gg/JSh7Bhs
 
-# User development
-Anyone who wants to can develop their own commands using the command template and submit it in the "user-dev" branch. I will test it out and include it into the bot if its good.
-
-Also, add your discord username in the command somewhere (maybe with a comment) for a role and maybe a dev chat ;)
-# Post Scriptum
-I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm a musician.
+# Can people contribute?
+Yes of course! You can use this if you don't know how to do it https://kbroman.org/github_tutorial/pages/fork.html
 
 # Latest commit
-MEEEEEEGAAAAAUUUUUUPDAAATE!!!!!
-This includes 13 new commands!
-* Webhook
-* Top reddit post
-* Say command
-* Random reddit post
-* Purge, makerole, kick and ban (for all you admins)
-* Get a users picture
-* New reddit post
-* Jailbreak info
-* Discord servers
+Multiple changes!
+* Converted to Discord.js v12
+* Added Anime, Manga and UwU commadns
+* Added Profile command
+* Added Spotify command
+
+# Special thanks to...
+@levichlev for helping out with the spotify command
+
+@Salint for helping out in general
