@@ -10,8 +10,8 @@ function run(msg, args) {
     args[0] = args.join(' ')
     args[0] = args[0].substring(8)
     var spotify = new Spotify({
-        id: '94aaf8025e5f40309fef9706c3bc3aaa',
-        secret: 'b9cb83f697ed4edeab375859f1858cd5'
+        id: 'no',
+        secret: 'no'
     });
                 
     try {
