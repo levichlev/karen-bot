@@ -2,7 +2,7 @@
 This bot is in it's early stages, but it was made as a joke. Since then I have updated the bot regularly with anti swearing and other stuff. Now, yes, this bot is not the best bot and it never will be, but I spend my time doing what I like making something that is semi-useful.
 
 # Purpose
-The purpose of making this repo public is so peaple can learn from it (or copy, I dont judge) and implement it in their bot.
+The purpose of making this repo public is so people can learn from it (or copy, I dont judge) and implement it in their bot.
 
 # Links
 Invite link - https://discordapp.com/oauth2/authorize?&client_id=599289687743397889&scope=bot&permissions=8
@@ -21,12 +21,12 @@ I sometimes add song lyrics in responses and stuff. Yes, I love music. Yes, I'm 
 # Latest commit
 MEEEEEEGAAAAAUUUUUUPDAAATE!!!!!
 This includes 13 new commands!
-Webhook
-Top reddit post
-Say command
-Random reddit post
-Purge, makerole, kick and ban (for all you admins)
-Get a users picture
-New reddit post
-Jailbreak info
-Discord servers
+* Webhook
+* Top reddit post
+* Say command
+* Random reddit post
+* Purge, makerole, kick and ban (for all you admins)
+* Get a users picture
+* New reddit post
+* Jailbreak info
+* Discord servers
