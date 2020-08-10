@@ -8,10 +8,10 @@ function run(msg, args) {
     let member = msg.mentions.users.first();
     if (member == undefined) msg.reply('Please tell me which profile picture to get.');
     else {
-        let embed = new Discord.RichEmbed()
+        let embed = new Discord.MessageEmbed()
         .setTitle(member.username + '\'s profile picture.')
         .setColor(config.color)
-        .setImage(member.avatarURL)
+        .setImage(member.avatarURL())
         .setFooter(`Author - ${config.creator}`, config.logo)
         msg.channel.send(embed);
     }

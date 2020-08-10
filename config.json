@@ -1,20 +1,28 @@
 {
     "prefix": "m!",
     "botversion": "3",
-    "token": "lol",
-    "logo": "https://i.imgur.com/yxq3XXl.jpg",
+    "token": "NzAxMDY1MDQ1NjkzNjkzOTYy.XrW3fw.q92UgLGo6bp8sW27KzHUAAE08Zk",
+    "logo": "https://exerra.xyz/assets/002pfp.gif",
     "creator": "Occult Waifu#1659",
-    "color": [135, 206, 235],
-    "colordecimal": "8900331",
+    "color": [
+        135,
+        206,
+        235
+    ],
+    "colordecimal": "87CEEB",
     "botname": "Karen Bot",
+    "DevIDs": [
+        "391878815263096833",
+        "223739857812324353"
+    ],
     "badwords": [
-        "fuck",
         "shit",
         "cunt",
         "ass",
         "asshole",
         "nigga",
         "nigger",
+        "niggers",
         "nibba",
         "pussy",
         "dick",
@@ -40,6 +48,6 @@
         "Finally, you're here.",
         "Can you help me?"
     ],
-    "webhookid": "i am an idiot lmfao",
-    "webhooktoken": "this too"
+    "webhookid": "707497930356949032",
+    "webhooktoken": "_brJonh9o-DAhKTmmolPRm8X84dR4uxnbZr_JLRfpIDop3YHbryqOivLGr4FzMctRPZr"
 }

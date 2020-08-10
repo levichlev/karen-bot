@@ -6,12 +6,12 @@ let config = app.config;
 async function run(msg, args) {
     // code here will run
     if (msg.member.hasPermission('BAN_MEMBER')) {
-        let member = msg.mentions.members.first() || msg.guild.members.get(args[0])
+        let member = msg.mentions.members.first() || msg.guild.members.get(args[1])
         if (!member)
             return msg.reply("Please mention a valid member of this server");
         if (!member.bannable)
             return msg.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
-        let reason = args.slice(1).join(' ');
+        let reason = args.slice(2).join(' ');
         if (!reason) reason = "No reason provided";
 
         // Time for public humiliation
@@ -21,7 +21,7 @@ async function run(msg, args) {
             title: `Member banned`,
             description: `${member.user.tag} has been banned`,
             thumbnail: {
-                url: member.user.avatarURL,
+                url: member.user.avatarURL(),
             },
             color: `${config.colordecimal}`,
             footer: {

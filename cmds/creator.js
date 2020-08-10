@@ -5,13 +5,13 @@ const config = app.config;
         
 function run(msg, args) {
      // code here will run
-     let embed = new Discord.RichEmbed()
+     let embed = new Discord.MessageEmbed()
      .setTitle(config.creator)
      .setImage(config.logo)
      .setColor(config.color)
      .setDescription(`The creator of ${config.botname} and other bots.`)
-     .addField('Auto-Biography', 'A musician that has no life.')
-     .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are now defunct.')
+     .addField('Auto-Biography', 'Musician, Coder.')
+     .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are now defunct. She has also created jailbreak themes, websites and music.')
      .setFooter(`Author - ${config.creator}`, config.logo)
      msg.channel.send(embed);
 }

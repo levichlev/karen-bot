@@ -3,7 +3,7 @@ let client = app.client;
 let Discord = app.Discord;
 let config = app.config;
 
-let ArtistNo = new Discord.RichEmbed()
+let ArtistNo = new Discord.MessageEmbed()
 .setTitle('Artists and Songs')
 .setColor(config.embedcolor)
 .setDescription('To get info about the artist, just type "info" after the artist!')
@@ -18,7 +18,7 @@ function run(msg, args) {
     else if(args[1].toLowerCase() == "aviva") {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         if(args[2].toLowerCase() === 'info') {
-            let infoaviva = new Discord.RichEmbed()
+            let infoaviva = new Discord.MessageEmbed()
             .setTitle('Musician AViVA')
             .setThumbnail('https://i.imgur.com/wMWTjBh.png')
             .setColor(config.color)
@@ -34,7 +34,7 @@ function run(msg, args) {
             msg.channel.send(infoaviva);
         }
         else if(args[2].toLowerCase() === "cemetery") {
-            let cemeteryaviva = new Discord.RichEmbed()
+            let cemeteryaviva = new Discord.MessageEmbed()
             .setTitle('AViVA - Cemetery')
             .setURL('https://ditto.fm/cemetery')
             .setColor(config.color)
@@ -46,7 +46,7 @@ function run(msg, args) {
             msg.channel.send(cemeteryaviva); 
           }
         else if(args[2].toLowerCase() === "psycho") {
-            let psychoaviva = new Discord.RichEmbed()
+            let psychoaviva = new Discord.MessageEmbed()
             .setTitle('AViVA - PSYCHO')
             .setURL('https://ditto.fm/psycho')
             .setColor(config.color)
@@ -64,7 +64,7 @@ function run(msg, args) {
     else if(args[1].toLowerCase() === 'au/ra') {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         else if(args[2].toLowerCase() === 'info') {
-            let aurainfo = new Discord.RichEmbed()
+            let aurainfo = new Discord.MessageEmbed()
             .setColor(config.color)
             .setTitle('Musician Au/Ra')
             .setThumbnail('https://66.media.tumblr.com/2113f608cb00e08e3d357f2ca5e5a7db/21941742562c2449-28/s1280x1920/c7191b070c63fc9f66346fe682246bd3914aa047.jpg')
@@ -80,7 +80,7 @@ function run(msg, args) {
             msg.channel.send(aurainfo);
         }
         else if(args[2].toLowerCase() === 'xgames') {
-            let auraxgames = new Discord.RichEmbed()
+            let auraxgames = new Discord.MessageEmbed()
             .setColor(config.color)
             .setTitle('Au/Ra - X Games')
             .setDescription('"X Games", a song made by Au/Ra')
@@ -91,7 +91,7 @@ function run(msg, args) {
             msg.channel.send(auraxgames)
         }
         else if(args[2].toLowerCase() === 'ghost') {
-            let auraghost = new Discord.RichEmbed()
+            let auraghost = new Discord.MessageEmbed()
             .setColor(config.color)
             .setTitle('Au/Ra - Ghost')
             .setDescription('"Ghost", a song made by Au/Ra in collaboration with Alan Walker.\nThis song is in the "Death Stranding" Original Soundtrack.')
@@ -108,7 +108,7 @@ function run(msg, args) {
     else if(args[1].toLowerCase() === 'marina') {
         if(args[2] === undefined) return msg.reply(ArtistNo);
         else if(args[2].toLowerCase() === 'info') {
-            let marinainfo = new Discord.RichEmbed()
+            let marinainfo = new Discord.MessageEmbed()
             .setColor(config.color)
             .setTitle('Musician MARINA')
             .setThumbnail('https://peoplepill.com/media/people/thumbs/M/marina-and-the-diamonds.jpg')
@@ -123,7 +123,7 @@ function run(msg, args) {
             msg.channel.send(marinainfo)
         }
         else if(args[2].toLowerCase() === 'froot') {
-            let marinafroot = new Discord.RichEmbed()
+            let marinafroot = new Discord.MessageEmbed()
             .setColor(config.color)
             .setTitle('MARINA AND THE DIAMONDS - FROOT')
             .setDescription('"FROOT", a song made by MARINA AND THE DIAMONDS.')

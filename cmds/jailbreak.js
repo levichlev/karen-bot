@@ -3,7 +3,7 @@ let client = app.client;
 let Discord = app.Discord;
 let config = app.config;
 
-let jblist = new Discord.RichEmbed();
+let jblist = new Discord.MessageEmbed();
 jblist.setTitle('Jailbreak error')
 jblist.setColor(config.color)
 jblist.setDescription('You have not specified or have mistyped the name of a Jailbreak')
@@ -16,7 +16,7 @@ function run(msg, args) {
     // code here will run
     if (args[1] == undefined) return msg.channel.send(jblist)
     else if (args[1].toLowerCase() == 'info') {
-        let jbinfo = new Discord.RichEmbed()
+        let jbinfo = new Discord.MessageEmbed()
         jbinfo.setTitle('Info about JB')
         jbinfo.setColor(config.color)
         jbinfo.setDescription('Information about Jailbreak')
@@ -25,7 +25,7 @@ function run(msg, args) {
         msg.channel.send(jbinfo)
     }
     else if (args[1].toLowerCase() == 'cydia') {
-        let jbcydia = new Discord.RichEmbed()
+        let jbcydia = new Discord.MessageEmbed()
         jbcydia.setTitle('Package Manager Cydia')
         jbcydia.setColor(config.color)
         jbcydia.addField('Developer', 'Jay Freeman (saurik)')
@@ -35,7 +35,7 @@ function run(msg, args) {
         msg.channel.send(jbcydia)
     }
     else if (args[1].toLowerCase() == 'installer') {
-        let jbinstaller = new Discord.RichEmbed()
+        let jbinstaller = new Discord.MessageEmbed()
         jbinstaller.setTitle('Package Manager Installer')
         jbinstaller.setColor(config.color)
         jbinstaller.setURL('https://apptapp.me/repo/')
@@ -46,7 +46,7 @@ function run(msg, args) {
         msg.channel.send(jbinstaller)
     }
     else if (args[1].toLowerCase() == 'zebra') {
-        let jbzebra = new Discord.RichEmbed()
+        let jbzebra = new Discord.MessageEmbed()
         jbzebra.setTitle('Package Manager Zebra')
         jbzebra.setColor(config.color)
         jbzebra.setURL('https://getzbra.com/')
@@ -57,7 +57,7 @@ function run(msg, args) {
         msg.channel.send(jbzebra)
     }
     else if (args[1].toLowerCase() == 'sileo') {
-        let jbsileo = new Discord.RichEmbed()
+        let jbsileo = new Discord.MessageEmbed()
         jbsileo.setTitle('Package Manager Sileo')
         jbsileo.setColor(config.color)
         jbsileo.setURL('https://getsileo.app/')
@@ -68,7 +68,7 @@ function run(msg, args) {
         msg.channel.send(jbsileo)
     }
     else if (args[1].toLowerCase() == 'unc0ver') {
-        let jbu0 = new Discord.RichEmbed()
+        let jbu0 = new Discord.MessageEmbed()
         jbu0.setTitle('unc0ver')
         jbu0.setColor(config.color)
         jbu0.setThumbnail('https://raw.githubusercontent.com/pwn20wndstuff/Undecimus/master/Undecimus/Assets.xcassets/AppIcon.appiconset/Icon-App-60x60%403x.png')
@@ -80,7 +80,7 @@ function run(msg, args) {
         msg.channel.send(jbu0);
     }
     else if (args[1].toLowerCase() == 'checkra1n' || args[1].toLowerCase() == 'checkrain') {
-        let jbc1 = new Discord.RichEmbed()
+        let jbc1 = new Discord.MessageEmbed()
         jbc1.setTitle('checkra1n')
         jbc1.setDescription('Semi-Tethered Jailbreak')
         jbc1.setColor(config.color)
@@ -92,7 +92,7 @@ function run(msg, args) {
         msg.channel.send(jbc1)
     }
     else if (args[1].toLowerCase() == 'chimera') {
-        let jbchimera = new Discord.RichEmbed()
+        let jbchimera = new Discord.MessageEmbed()
         jbchimera.setTitle('Chimera')
         jbchimera.setColor(config.color)
         jbchimera.setDescription('Semi-Untethered Jailbreak')

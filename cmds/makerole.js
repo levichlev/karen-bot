@@ -8,7 +8,7 @@ function run(msg, args) {
     if (msg.member.hasPermission('ADMINISTRATOR')) {
         if (args[1] == undefined) return msg.channel.send('Please tell me the name')
         else {
-            msg.guild.createRole( { name: args[1], permissions: args[2] } );
+            msg.guild.roles.create( { name: args[1], permissions: args[2] } );
         }
     }
     else {

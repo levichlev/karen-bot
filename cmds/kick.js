@@ -8,7 +8,7 @@ async function run(msg, args) {
     // code here will run
     if (msg.member.hasPermission('KICK_MEMBERS')) {
         
-        let member = msg.mentions.members.first() || msg.guild.members.get(args[0]);
+        let member = msg.mentions.members.first() || msg.guild.members.get(args[1]);
         
         if (!member)
             return msg.reply("Please mention a valid member of this server");
@@ -16,7 +16,7 @@ async function run(msg, args) {
             if (!member.kickable)
             return msg.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
 
-        let reason = args.slice(1).join(' ');
+        let reason = args.slice(2).join(' ');
         if (!reason) reason = "No reason provided";
 
         await member.kick(reason)
@@ -25,7 +25,7 @@ async function run(msg, args) {
             title: `Member kicked`,
             description: `${member.user.tag} has been kicked`,
             thumbnail: {
-                url: member.user.avatarURL,
+                url: member.user.avatarURL(),
             },
             color: `${config.colordecimal}`,
             footer: {

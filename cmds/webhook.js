@@ -6,7 +6,7 @@ const hook = new Discord.WebhookClient(config.webhookid, config.webhooktoken);
 
 function run(msg, args) {
     // code here will run
-    if (msg.author.id !== '') return msg.channel.send('No.')
+    if (msg.author.id == '391878815263096833') return msg.channel.send('No.')
     let string = "";
     for (let i = 1; i < args.length; i++) {
         string = string + " " + args[i];

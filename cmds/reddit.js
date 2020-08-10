@@ -5,7 +5,7 @@ let config = app.config;
 
 function run(msg, args) {
     // code here will run
-    let reddit = new Discord.RichEmbed()
+    let reddit = new Discord.MessageEmbed()
     reddit.setTitle('Reddit commands')
     reddit.setColor(config.color)
     reddit.setDescription('Reddit commands')
