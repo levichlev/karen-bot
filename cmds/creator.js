@@ -9,6 +9,7 @@ function run(msg, args) {
      .setTitle(config.creator)
      .setImage(config.logo)
      .setColor(config.color)
+     .setURL('https://exerra.xyz')
      .setDescription(`The creator of ${config.botname} and other bots.`)
      .addField('Auto-Biography', 'Musician, Coder.')
      .addField('Creations', 'Occult Waifu has made several bots, including this one. Sadly most of them are now defunct. She has also created jailbreak themes, websites and music.')
