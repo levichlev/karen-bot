@@ -6,6 +6,8 @@ const axios = require("axios");
 const ytdl = require('ytdl-core');
 const Anilist = require('anilist-node')
 const anilist = new Anilist()
+const Spotify = require('node-spotify-api');
+client.config = require('./advanced_config.js')
 let commands = {};
 
 
@@ -90,7 +92,7 @@ client.on('message', async msg => {
 });
 
 
-client.login(config.token);
+client.login(client.config.discord);
 exports.client = client;
 exports.config = config;
 exports.commands = commands;
