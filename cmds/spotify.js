@@ -8,11 +8,9 @@ function run(msg, args) {
     // code here will run
     args[0] = args.join(' ')
     args[0] = args[0].substring(8)
-    var spotifyid = client.config.spotify_id;
-    var spotifysecret = client.config.spotify_secret;
     var spotify = new Spotify({
-        id: spotifyid,
-        secret: spotifysecret
+        id: app.client.config.spotify_id,
+        secret: app.client.config.spotify_secret
     });
                 
     try {
